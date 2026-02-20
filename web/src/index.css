@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  /* You can define custom variables here if needed */
+}
+
+/* Enable class-based dark mode for v4 */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* Smooth transition for background and text colors */
+  body {
+    @apply bg-[#F9FAFF] text-[#1A1A3A] transition-colors duration-300;
+    @apply dark:bg-slate-950 dark:text-slate-100;
+  }
+}
